@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Axel Sköld — Portfolio</title>
+  <meta name="description" content="Portfolio för Axel Sköld – .NET-utvecklare. Projekt, tech stack, och kontakt." />
+
+  <!-- Nice default font stack (no external dependencies) -->
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="app.js"></script>
+</head>
+
+<body>
+  <a class="skip" href="#main">Hoppa till innehåll</a>
+
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <a class="brand" href="#top" aria-label="Till toppen">
+        <span class="brand__mark" aria-hidden="true"></span>
+        <span class="brand__text">Axel Sköld</span>
+      </a>
+
+      <nav class="nav" aria-label="Huvudmeny">
+        <a href="#projects">Projekt</a>
+        <a href="#about">Om</a>
+        <a href="#contact">Kontakt</a>
+      </nav>
+
+      <div class="topbar__actions">
+        <button class="iconbtn" id="themeBtn" type="button" aria-label="Växla tema" title="Växla tema">
+          <span aria-hidden="true">🌗</span>
+        </button>
+        <a class="btn btn--primary" href="#contact">Kontakta</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section id="top" class="hero">
+      <div class="container hero__grid">
+        <div class="hero__left">
+          <p class="kicker">
+            <span class="pill">.NET</span>
+            <span class="pill">API</span>
+            <span class="pill">Performance</span>
+            <span class="pill">Azure</span>
+          </p>
+
+          <h1>
+            Bygger snabba, stabila system<br />
+            <span class="accent">och kan visa mätbara resultat.</span>
+          </h1>
+
+          <p class="lead">
+            Jag är en .NET-utvecklare med fokus på backend, dataåtkomst och prestanda.
+            Här är projekt som Capoit, GearVault och mina performance-experiment.
+          </p>
+
+          <div class="hero__cta">
+            <a class="btn btn--primary" href="#projects">Se projekt</a>
+            <a class="btn btn--ghost" href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a>
+            <a class="btn btn--ghost" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
+          </div>
+
+          <div class="hero__stats">
+            <div class="stat card card--soft">
+              <div class="stat__label">Fokus</div>
+              <div class="stat__value">API + Perf</div>
+              <div class="stat__hint">Latency • allocations • caching</div>
+            </div>
+            <div class="stat card card--soft">
+              <div class="stat__label">Stack</div>
+              <div class="stat__value">.NET • SQL</div>
+              <div class="stat__hint">EF Core • Dapper • Azure</div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="hero__right">
+          <div class="profile card">
+            <div class="profile__top">
+              <div class="avatar" aria-hidden="true"></div>
+              <div>
+                <div class="profile__name">Axel Sköld</div>
+                <div class="profile__role">.NET Developer</div>
+              </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <ul class="profile__list">
+              <li><span>Plats</span><strong>Sverige</strong></li>
+              <li><span>Inriktning</span><strong>Backend & prestanda</strong></li>
+              <li><span>Styrka</span><strong>Mät → ändra → verifiera</strong></li>
+            </ul>
+
+            <div class="divider"></div>
+
+            <div class="profile__links">
+              <a class="chip" href="mailto:axel@example.com">Mail</a>
+              <a class="chip" href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a>
+              <a class="chip" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
+            </div>
+
+            <p class="micro">
+              Tips: byt länkar + text. Projektdata finns i <code>app.js</code>.
+            </p>
+          </div>
+        </aside>
+      </div>
+
+      <div class="bgglow" aria-hidden="true"></div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section__head">
+          <h2>Projekt</h2>
+          <p class="muted">Skanna snabbt — klicka för repo/demo/case.</p>
+        </div>
+
+        <div class="toolbar" role="region" aria-label="Projektfilter">
+          <div class="filters" id="filters"></div>
+
+          <label class="search" aria-label="Sök bland projekt">
+            <span class="search__icon" aria-hidden="true">⌕</span>
+            <input id="searchInput" type="search" placeholder="Sök… (t.ex. EF Core, Azure, Unity)" />
+          </label>
+        </div>
+
+        <div class="grid" id="projectGrid" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section id="about" class="section section--alt">
+      <div class="container twoCol">
+        <div>
+          <h2>Om</h2>
+          <p>
+            Jag gillar när saker är tydliga: vad som är flaskhalsen, vad som är “nice to have”,
+            och vad som faktiskt flyttar nålen. Jag bygger gärna testharnesser och benchmarkar
+            för att få fakta, inte magkänsla.
+          </p>
+
+          <div class="bullets">
+            <div class="bullet card card--soft">
+              <div class="bullet__title">Performance mindset</div>
+              <div class="bullet__text">BenchmarkDotNet, allocations, caching, query tuning</div>
+            </div>
+            <div class="bullet card card--soft">
+              <div class="bullet__title">Backend first</div>
+              <div class="bullet__text">ASP.NET Core, SQL Server, EF Core/Dapper, CI/CD</div>
+            </div>
+            <div class="bullet card card--soft">
+              <div class="bullet__title">Bygger och shippar</div>
+              <div class="bullet__text">GitHub Actions, Docker, Azure, tydliga miljöer</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Snabb överblick</h3>
+          <ul class="list">
+            <li><strong>Backend:</strong> .NET, ASP.NET Core, Minimal APIs</li>
+            <li><strong>Data:</strong> SQL Server, EF Core, Dapper, indexing</li>
+            <li><strong>DevOps:</strong> GitHub Actions, Docker, Azure</li>
+            <li><strong>Övrigt:</strong> Unity, automation, spel/prototyper</li>
+          </ul>
+          <div class="ctaRow">
+            <a class="btn btn--ghost" href="#projects">Se projekt</a>
+            <a class="btn btn--primary" href="#contact">Kontakta</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container twoCol">
+        <div>
+          <h2>Kontakt</h2>
+          <p class="muted">
+            Säg hej! Jag svarar gärna på frågor om roller, uppdrag eller projekt.
+          </p>
+
+          <div class="contactCards">
+            <a class="contactCard" href="mailto:axel@example.com">
+              <div class="contactCard__title">Mail</div>
+              <div class="contactCard__value">axel@example.com</div>
+            </a>
+            <a class="contactCard" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">
+              <div class="contactCard__title">LinkedIn</div>
+              <div class="contactCard__value">linkedin.com/in/…</div>
+            </a>
+            <a class="contactCard" href="https://github.com/" target="_blank" rel="noreferrer">
+              <div class="contactCard__title">GitHub</div>
+              <div class="contactCard__value">github.com/…</div>
+            </a>
+          </div>
+        </div>
+
+        <form class="form card" onsubmit="return false;">
+          <h3>Snabbt meddelande</h3>
+          <p class="muted micro">Front-end only. Vill du göra den “riktig”: koppla Formspree/Netlify senare.</p>
+
+          <label class="field">
+            <span>Namn</span>
+            <input type="text" placeholder="Ditt namn" autocomplete="name" />
+          </label>
+
+          <label class="field">
+            <span>E-post</span>
+            <input type="email" placeholder="din@mail.se" autocomplete="email" />
+          </label>
+
+          <label class="field">
+            <span>Meddelande</span>
+            <textarea rows="5" placeholder="Vad vill du bygga?"></textarea>
+          </label>
+
+          <div class="ctaRow">
+            <button class="btn btn--primary" id="fakeSend" type="button">Skicka</button>
+            <button class="btn btn--ghost" id="copyEmail" type="button">Kopiera mail</button>
+          </div>
+
+          <p class="micro muted" id="sendHint" hidden>✅ Klart! (Den här knappen skickar inget än.)</p>
+        </form>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+        <span class="muted">© <span id="year"></span> Axel Sköld</span>
+        <span class="muted">Byggd statiskt • GitHub Pages</span>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>
