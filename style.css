@@ -304,6 +304,11 @@ body[data-theme="light"] .card{
   outline: 3px solid rgba(79,209,255,.28);
   outline-offset: 2px;
 }
+.icon {
+  width: 18px;
+  height: 18px;
+  color: var(--text); /* blir svart/vit beroende på tema */
+}
 
 /* -------------------------
    Sections
