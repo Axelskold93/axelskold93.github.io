@@ -39,10 +39,7 @@ html{ scroll-behavior:smooth; }
 body{
   margin:0;
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-  background:
-    radial-gradient(1000px 700px at 10% -10%, rgba(79,209,255,.22), transparent 55%),
-    radial-gradient(900px 600px at 90% 0%, rgba(124,92,255,.18), transparent 55%),
-    linear-gradient(180deg, var(--bg), var(--bg2));
+  background: var(--bg);
   color:var(--text);
   line-height:1.6;
 }
@@ -54,17 +51,6 @@ body{
   padding:0 20px;
 }
 
-.skip{
-  position:absolute;
-  left:-999px;
-  top:0;
-  background:var(--bg2);
-  color:var(--text);
-  padding:10px 12px;
-  border-radius:12px;
-  border:1px solid var(--border);
-}
-.skip:focus{ left:14px; top:14px; z-index:50; }
 
 /* -------------------------
    Topbar
@@ -133,11 +119,15 @@ body[data-theme="light"] .topbar{
   border-color: rgba(79,209,255,.45);
   background: rgba(255,255,255,.06);
 }
-
+#top{
+    display: flex;
+    align-items: center;
+}
 /* -------------------------
    Hero
 -------------------------- */
 .hero{ position:relative; padding: 64px 0 30px; }
+.containter
 .hero__grid{
   display:grid;
   grid-template-columns: 1.25fr .85fr;
@@ -148,8 +138,8 @@ body[data-theme="light"] .topbar{
   .hero__grid{ grid-template-columns: 1fr; }
 }
 
-.kicker{ display:flex; flex-wrap:wrap; gap:10px; margin:0 0 14px; }
-.pill{
+.tags{ display:flex; flex-wrap:wrap; gap:10px; margin:0 0 14px; }
+.tag{
   font-size:.8rem;
   color:var(--muted);
   border:1px solid var(--border);
@@ -157,13 +147,22 @@ body[data-theme="light"] .topbar{
   padding:6px 10px;
   border-radius: var(--radius2);
 }
-
+.hero__left{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 h1{
   margin:0 0 14px;
   line-height:1.08;
   font-size: clamp(2.1rem, 5vw, 3.2rem);
   letter-spacing:-.02em;
 }
+.profile-pic{
+    width: 100px;
+    border-radius: 50%;    
+}
+
 .accent{
   background: linear-gradient(90deg, var(--accent), var(--accent2));
   -webkit-background-clip:text;
@@ -189,13 +188,6 @@ h1{
 .stat__value{ font-weight:750; font-size:1.1rem; margin-top:2px; }
 .stat__hint{ color:var(--muted); font-size:.85rem; margin-top:2px; }
 
-.bgglow{
-  position:absolute;
-  inset:auto 0 -60px 0;
-  height: 140px;
-  background: radial-gradient(500px 120px at 30% 50%, rgba(79,209,255,.18), transparent 70%);
-  pointer-events:none;
-}
 
 /* -------------------------
    Cards / components
@@ -208,7 +200,7 @@ h1{
   box-shadow: var(--shadow2);
 }
 body[data-theme="light"] .card{
-  background: linear-gradient(180deg, rgba(255,255,255,1), rgba(255,255,255,1));
+  background: pink;
 }
 
 .card--soft{
@@ -373,23 +365,6 @@ h3{ margin:0 0 10px; }
   background: linear-gradient(135deg, rgba(79,209,255,.95), rgba(124,92,255,.9));
 }
 
-.search{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  padding: 10px 12px;
-  border-radius: 14px;
-  border:1px solid var(--border);
-  background: rgba(255,255,255,.04);
-}
-.search__icon{ color:var(--muted); }
-.search input{
-  border:none;
-  outline:none;
-  background: transparent;
-  color:var(--text);
-  min-width: 260px;
-}
 @media (max-width: 520px){
   .search input{ min-width: 200px; }
 }
@@ -410,16 +385,10 @@ h3{ margin:0 0 10px; }
   color:var(--text);
   overflow:hidden;
 }
-.project::before{
-  content:"";
-  position:absolute;
-  inset:-2px;
-  background: radial-gradient(260px 120px at 30% 10%, rgba(79,209,255,.15), transparent 60%);
-  opacity:0;
-  transition: opacity .2s ease;
-  pointer-events:none;
+.project:hover{
+  transform: scale(1.02);
 }
-.project:hover::before{ opacity:1; }
+
 
 .project__top{
   display:flex;
@@ -490,25 +459,21 @@ h3{ margin:0 0 10px; }
 /* -------------------------
    Contact
 -------------------------- */
-.contactCards{ display:grid; gap:12px; margin-top:14px; }
+
 .contactCard{
-  display:block;
+  display:flex;
+  align-items: center;
   padding:14px 16px;
+  margin: 10px;
+  flex-direction:column;
   border-radius: var(--radius);
   border:1px solid var(--border);
   background: rgba(255,255,255,.04);
   text-decoration:none;
   transition: transform .15s ease, border-color .15s ease, background .15s ease;
 }
-.contactCard:hover{
-  transform: translateY(-2px);
-  border-color: rgba(79,209,255,.45);
-  background: rgba(255,255,255,.06);
-}
-.contactCard__title{ color:var(--muted); font-size:.9rem; }
-.contactCard__value{ color:var(--text); font-weight:700; margin-top:4px; }
 
-.form{ padding:16px; }
+
 .field{ display:grid; gap:8px; margin-top:12px; }
 .field span{ color:var(--muted); font-size:.9rem; }
 input, textarea{
@@ -519,7 +484,84 @@ input, textarea{
   padding: 12px 12px;
   font: inherit;
 }
+.contactCard--form{
+  width: 100%;
+  max-width: 520px;
+  padding: 18px;
+  align-items: stretch; /* viktigt: så form fyller bredd */
+}
 
+/* Själva form-layouten */
+.contactForm{
+  width: 100%;
+  display: grid;
+  gap: 14px;
+}
+
+/* Ett fält (label + input) */
+.contactField{
+  display: grid;
+  gap: 8px;
+  margin: 0;   /* ta bort gamla margins */
+  padding: 0;  /* ta bort gamla padding */
+}
+
+/* Label-texten */
+.contactLabel{
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+
+/* Inputs i kontaktformuläret */
+.contactForm input,
+.contactForm textarea{
+  width: 100%;
+  margin: 0;            /* dödar dina #emailInput/#messageInput-margins */
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.04);
+  padding: 12px 12px;
+  color: var(--text);
+  transition: border-color .15s ease, box-shadow .15s ease, background .15s ease;
+}
+
+/* Textarea: snygg, kontrollerad */
+.contactForm textarea{
+  resize: none;
+  min-height: 130px;
+}
+
+/* Focus state: premium */
+.contactForm input:focus,
+.contactForm textarea:focus{
+  outline: none;
+  border-color: rgba(79,209,255,.55);
+  box-shadow: 0 0 0 4px rgba(79,209,255,.18);
+  background: rgba(255,255,255,.06);
+}
+
+/* Placeholder: lite mjukare */
+.contactForm input::placeholder,
+.contactForm textarea::placeholder{
+  color: rgba(167,173,187,.75);
+}
+
+/* Knappen: full width på mobil, auto på desktop */
+.contactForm .btn{
+  justify-self: start;
+}
+@media (max-width: 520px){
+  .contactCard--form{ max-width: none; }
+  .contactForm .btn{ width: 100%; justify-self: stretch; }
+}
+
+/* Liten hint-text under knappen */
+.contactHint{
+  margin: 0;
+  min-height: 1.1em;
+  font-size: .9rem;
+  color: var(--muted);
+}
 /* -------------------------
    Footer
 -------------------------- */

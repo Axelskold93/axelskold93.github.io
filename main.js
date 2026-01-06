@@ -19,28 +19,6 @@ themeBtn?.addEventListener("click", () => {
 // --- Footer year ---
 document.getElementById("year").textContent = new Date().getFullYear();
 
-// --- Fake send + copy email ---
-const fakeSend = document.getElementById("fakeSend");
-const sendHint = document.getElementById("sendHint");
-fakeSend?.addEventListener("click", () => {
-  sendHint.hidden = false;
-  setTimeout(() => (sendHint.hidden = true), 2500);
-});
-
-document.getElementById("copyEmail")?.addEventListener("click", async () => {
-  const email = "axel@example.com"; // <-- byt till din riktiga
-  try {
-    await navigator.clipboard.writeText(email);
-    sendHint.hidden = false;
-    sendHint.textContent = "✅ Mail kopierat!";
-    setTimeout(() => {
-      sendHint.hidden = true;
-      sendHint.textContent = "✅ Klart! (Den här knappen skickar inget än.)";
-    }, 2000);
-  } catch {
-    alert("Kunde inte kopiera automatiskt. Mail: " + email);
-  }
-});
 
 // --- Projects data ---
 const projects = [
@@ -167,7 +145,25 @@ function render() {
 
   grid.innerHTML = items.map(projectCard).join("");
 }
+const form = document.querySelector("form");
 
+form?.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const data = new FormData(form);
+  const res = await fetch(form.action, {
+    method: form.method,
+    body: data,
+    headers: { 'Accept': 'application/json' }
+  });
+
+  if (res.ok) {
+    form.reset();
+    alert("Tack! Jag hör av mig 👍");
+  } else {
+    alert(`Något gick fel (${res.status}). Kolla Console.`);
+  }
+});
 function escapeHtml(str) {
   return String(str)
     .replaceAll("&", "&amp;")

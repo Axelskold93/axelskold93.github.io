@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="sv">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -12,7 +13,6 @@
 </head>
 
 <body>
-  <a class="skip" href="#main">Hoppa till innehåll</a>
 
   <header class="topbar">
     <div class="container topbar__inner">
@@ -26,14 +26,12 @@
         <a href="#about">Om</a>
         <a href="#contact">Kontakt</a>
       </nav>
-
-            <div class="topbar__actions">
-                <button class="iconbtn" id="themeBtn" aria-label="Växla tema">
-        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"
-                fill="currentColor"/>
-                        </svg>
-                    </button>
+      <div class="topbar__actions">
+        <button class="iconbtn" id="themeBtn" aria-label="Växla tema" title="Växla tema">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z" fill="currentColor" />
+          </svg>
+        </button>
         <!-- <button class="iconbtn" id="themeBtn" type="button" aria-label="Växla tema" title="Växla tema">
           <span aria-hidden="true">🌗</span>
         </button> -->
@@ -46,16 +44,17 @@
     <section id="top" class="hero">
       <div class="container hero__grid">
         <div class="hero__left">
-          <p class="kicker">
-            <span class="pill">.NET</span>
-            <span class="pill">API</span>
-            <span class="pill">Performance</span>
-            <span class="pill">Azure</span>
-          </p>
-
+          <!-- <p class="tags">
+            <span class="tag">.NET</span>
+            <span class="tag">API</span>
+            <span class="tag">Performance</span>
+            <span class="tag">Azure</span>
+          </p> -->
+          <img src="assets/profil-bild.jpg" alt="Profilbild av Axel Sköld" class="profile-pic" />
           <h1>
-            Bygger snabba, stabila system<br />
-            <span class="accent">och kan visa mätbara resultat.</span>
+            Axel Sköld
+            <!-- Bygger snabba, stabila system<br />
+            <span class="accent">och kan visa mätbara resultat.</span> -->
           </h1>
 
           <p class="lead">
@@ -64,56 +63,16 @@
           </p>
 
           <div class="hero__cta">
-            <a class="btn btn--primary" href="#projects">Se projekt</a>
-            <a class="btn btn--ghost" href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a>
+            <!-- <a class="btn btn--primary" href="#projects">Se projekt</a> -->
+            <a class="btn btn--ghost" href="https://github.com/Axelskold93" target="_blank" rel="noreferrer">GitHub</a>
             <a class="btn btn--ghost" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
           </div>
 
           <div class="hero__stats">
-            <div class="stat card card--soft">
-              <div class="stat__label">Fokus</div>
-              <div class="stat__value">API + Perf</div>
-              <div class="stat__hint">Latency • allocations • caching</div>
-            </div>
-            <div class="stat card card--soft">
-              <div class="stat__label">Stack</div>
-              <div class="stat__value">.NET • SQL</div>
-              <div class="stat__hint">EF Core • Dapper • Azure</div>
-            </div>
           </div>
         </div>
 
-        <aside class="hero__right">
-          <div class="profile card">
-            <div class="profile__top">
-              <div class="avatar" aria-hidden="true"></div>
-              <div>
-                <div class="profile__name">Axel Sköld</div>
-                <div class="profile__role">.NET Developer</div>
-              </div>
-            </div>
 
-            <div class="divider"></div>
-
-            <ul class="profile__list">
-              <li><span>Plats</span><strong>Sverige</strong></li>
-              <li><span>Inriktning</span><strong>Backend & prestanda</strong></li>
-              <li><span>Styrka</span><strong>Mät → ändra → verifiera</strong></li>
-            </ul>
-
-            <div class="divider"></div>
-
-            <div class="profile__links">
-              <a class="chip" href="mailto:axel@example.com">Mail</a>
-              <a class="chip" href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a>
-              <a class="chip" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
-            </div>
-
-            <p class="micro">
-              Tips: byt länkar + text. Projektdata finns i <code>app.js</code>.
-            </p>
-          </div>
-        </aside>
       </div>
 
       <div class="bgglow" aria-hidden="true"></div>
@@ -123,20 +82,13 @@
       <div class="container">
         <div class="section__head">
           <h2>Projekt</h2>
-          <p class="muted">Skanna snabbt — klicka för repo/demo/case.</p>
+
         </div>
 
         <div class="toolbar" role="region" aria-label="Projektfilter">
           <div class="filters" id="filters"></div>
-
-          <label class="search" aria-label="Sök bland projekt">
-            <span class="search__icon" aria-hidden="true">⌕</span>
-            <input id="searchInput" type="search" placeholder="Sök… (t.ex. EF Core, Azure, Unity)" />
-          </label>
+          <div class="grid" id="projectGrid" aria-live="polite"></div>
         </div>
-
-        <div class="grid" id="projectGrid" aria-live="polite"></div>
-      </div>
     </section>
 
     <section id="about" class="section section--alt">
@@ -164,20 +116,6 @@
             </div>
           </div>
         </div>
-
-        <div class="card">
-          <h3>Snabb överblick</h3>
-          <ul class="list">
-            <li><strong>Backend:</strong> .NET, ASP.NET Core, Minimal APIs</li>
-            <li><strong>Data:</strong> SQL Server, EF Core, Dapper, indexing</li>
-            <li><strong>DevOps:</strong> GitHub Actions, Docker, Azure</li>
-            <li><strong>Övrigt:</strong> Unity, automation, spel/prototyper</li>
-          </ul>
-          <div class="ctaRow">
-            <a class="btn btn--ghost" href="#projects">Se projekt</a>
-            <a class="btn btn--primary" href="#contact">Kontakta</a>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -190,47 +128,25 @@
           </p>
 
           <div class="contactCards">
-            <a class="contactCard" href="mailto:axel@example.com">
-              <div class="contactCard__title">Mail</div>
-              <div class="contactCard__value">axel@example.com</div>
-            </a>
-            <a class="contactCard" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">
-              <div class="contactCard__title">LinkedIn</div>
-              <div class="contactCard__value">linkedin.com/in/…</div>
-            </a>
-            <a class="contactCard" href="https://github.com/" target="_blank" rel="noreferrer">
-              <div class="contactCard__title">GitHub</div>
-              <div class="contactCard__value">github.com/…</div>
-            </a>
-          </div>
+            <div class="contactCard contactCard--form">
+  <form class="contactForm" action="https://formspree.io/f/xeeobbvy" method="POST">
+    <label class="contactField">
+      <span class="contactLabel">Din e-post</span>
+      <input type="email" name="email" placeholder="din@mail.se" required>
+    </label>
+
+    <label class="contactField">
+      <span class="contactLabel">Meddelande</span>
+      <textarea name="message" rows="5" placeholder="Vad vill du bygga?" required></textarea>
+    </label>
+
+    <button class="btn btn--primary" type="submit">Skicka</button>
+    <p class="contactHint" aria-live="polite"></p>
+  </form>
+</div>
+
+
         </div>
-
-        <form class="form card" onsubmit="return false;">
-          <h3>Snabbt meddelande</h3>
-          <p class="muted micro">Front-end only. Vill du göra den “riktig”: koppla Formspree/Netlify senare.</p>
-
-          <label class="field">
-            <span>Namn</span>
-            <input type="text" placeholder="Ditt namn" autocomplete="name" />
-          </label>
-
-          <label class="field">
-            <span>E-post</span>
-            <input type="email" placeholder="din@mail.se" autocomplete="email" />
-          </label>
-
-          <label class="field">
-            <span>Meddelande</span>
-            <textarea rows="5" placeholder="Vad vill du bygga?"></textarea>
-          </label>
-
-          <div class="ctaRow">
-            <button class="btn btn--primary" id="fakeSend" type="button">Skicka</button>
-            <button class="btn btn--ghost" id="copyEmail" type="button">Kopiera mail</button>
-          </div>
-
-          <p class="micro muted" id="sendHint" hidden>✅ Klart! (Den här knappen skickar inget än.)</p>
-        </form>
       </div>
     </section>
 
@@ -242,4 +158,5 @@
     </footer>
   </main>
 </body>
+
 </html>
