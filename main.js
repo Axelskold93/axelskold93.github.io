@@ -23,39 +23,37 @@ document.getElementById("year").textContent = new Date().getFullYear();
 // --- Projects data ---
 const projects = [
   {
-    title: "Capoit",
-    subtitle: "PIIT-scraping + API-ekosystem",
-    desc: "Scraping, normalisering och API-lager. Fokus på robusthet och driftbarhet.",
-    tags: [".NET", "SQL Server", "Azure", "API"],
-    category: "Backend",
-    links: {
-      repo: "https://github.com/",
-      demo: ""
-    }
-  },
+   
+  title: "Insamlingsplattform",
+  subtitle: "Public data processing & API platform",
+  desc: "Plattform för insamling, strukturering och exponering av extern information via API:er. Byggd med fokus på robusthet, skalbarhet och driftbarhet. Utvecklad under min LIA/praktik.",
+  tags: [".NET", "SQL Server", "Azure", "API"],
+  category: "Backend",
+  links: {}
+},
   {
     title: "GearVault",
     subtitle: "Inventarie & prisbevakning",
-    desc: "Monolit i .NET med dataåtkomst via EF Core/Dapper. Byggd för prestanda och tydlig modellering.",
-    tags: [".NET", "EF Core", "Dapper", "SQL"],
+    desc: "Webbapplikation för att hålla koll på sin datorutrustning och bevaka prisutvecklingen över tid. Byggd med Blazor WebAssembly och EF Core.",
+    tags: [".NET", "EF Core", "Dapper", "SQL", "Blazor"],
     category: "Backend",
-    links: { repo: "https://github.com/" }
+    links: { repo: "https://github.com/Axelskold93/GearVault" }
   },
   {
-    title: "Examensarbete — API Performance",
+    title: "Examensarbete API Performance",
     subtitle: "Mätbar optimering av GET-endpoints",
     desc: "Benchmark av async/sync, AsNoTracking, caching och query-strategier. Fokus på latency och allocations.",
-    tags: ["BenchmarkDotNet", "ASP.NET", "Caching", "Perf"],
+    tags: ["BenchmarkDotNet", "ASP.NET", "Caching",],
     category: "Performance",
-    links: { repo: "https://github.com/", demo: "" }
+    links: { repo: "", demo: "assets/AxelSköld Examensarbete 2025.pdf" }
   },
   {
     title: "Vinterkyla: Shattered Realms",
     subtitle: "Unity-prototyp",
-    desc: "UI/Inventory-flöden och komponenter. Fokus på struktur och spelbara prototyper.",
+    desc: "UI/Inventory-flöden och mini-map komponenter.",
     tags: ["Unity", "C#", "UI"],
     category: "GameDev",
-    links: { repo: "https://github.com/" }
+    links: {}
   }
 ];
 
@@ -109,7 +107,7 @@ function projectCard(p) {
 
   const actions = [];
   if (p.links?.repo) actions.push(`<a class="link" href="${p.links.repo}" target="_blank" rel="noreferrer">Repo ↗</a>`);
-  if (p.links?.demo) actions.push(`<a class="link" href="${p.links.demo}" target="_blank" rel="noreferrer">Demo ↗</a>`);
+  if (p.links?.demo) actions.push(`<a class="link" href="${p.links.demo}" target="_blank" rel="noreferrer">PDF ↗</a>`);
 
   return `
     <article class="project card">
