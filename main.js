@@ -114,9 +114,9 @@ function projectCard(p) {
       <div class="project__top">
         <div>
           <h3 class="project__title">${escapeHtml(p.title)}</h3>
-          <div class="project__meta">${escapeHtml(p.subtitle || p.category)}</div>
+          <div class="project__meta">${escapeHtml(p.subtitle || "")}</div>
         </div>
-        <div class="project__meta">${escapeHtml(p.category)}</div>
+       <span class="tag tag--category">${escapeHtml(p.category || "")}</span>
       </div>
 
       <p class="project__desc">${escapeHtml(p.desc || "")}</p>
