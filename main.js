@@ -24,7 +24,7 @@ document.getElementById("year").textContent = new Date().getFullYear();
 const projects = [
   {
    
-  title: "Insamlingsplattform",
+  title: "Data Collection Platform",
   subtitle: "Public data processing & API platform",
   desc: "Platform for collecting, structuring and exposing external information via APIs. Built with a focus on robustness, scalability and operability. Developed during my internship.",
   tags: [".NET", "SQL Server", "Azure", "API"],
