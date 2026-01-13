@@ -26,7 +26,7 @@ const projects = [
    
   title: "Insamlingsplattform",
   subtitle: "Public data processing & API platform",
-  desc: "Plattform för insamling, strukturering och exponering av extern information via API:er. Byggd med fokus på robusthet, skalbarhet och driftbarhet. Utvecklad under min LIA/praktik.",
+  desc: "Platform for collecting, structuring and exposing external information via APIs. Built with a focus on robustness, scalability and operability. Developed during my internship.",
   tags: [".NET", "SQL Server", "Azure", "API"],
   category: "Backend",
   links: {}
@@ -34,23 +34,23 @@ const projects = [
   {
     title: "GearVault",
     subtitle: "Inventarie & prisbevakning",
-    desc: "Webbapplikation för att hålla koll på sin datorutrustning och bevaka prisutvecklingen över tid. Byggd med Blazor WebAssembly och EF Core.",
+    desc: "Web application for keeping track of your computer equipment and monitoring price developments over time. Built with Blazor WebAssembly and EF Core.",
     tags: [".NET", "EF Core", "Dapper", "SQL", "Blazor"],
     category: "Backend",
     links: { repo: "https://github.com/Axelskold93/GearVault" }
   },
   {
-    title: "Examensarbete API Performance",
-    subtitle: "Mätbar optimering av GET-endpoints",
-    desc: "Benchmark av async/sync, AsNoTracking, caching och query-strategier. Fokus på latency och allocations.",
+    title: "Degree Project API Performance",
+    subtitle: "Measurable optimization of GET endpoints",
+    desc: "Benchmark of async/sync, AsNoTracking, caching and query strategies. Focus on latency and allocations.",
     tags: ["BenchmarkDotNet", "ASP.NET", "Caching",],
     category: "Performance",
     links: { repo: "", demo: "assets/AxelSköld Examensarbete 2025.pdf" }
   },
   {
     title: "Vinterkyla: Shattered Realms",
-    subtitle: "Unity-prototyp",
-    desc: "UI/Inventory-flöden och mini-map komponenter.",
+    subtitle: "Unity-prototype",
+    desc: "UI/Inventory-flows och mini-map components.",
     tags: ["Unity", "C#", "UI"],
     category: "GameDev",
     links: {}

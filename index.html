@@ -22,9 +22,9 @@
       </a>
 
       <nav class="nav" aria-label="Huvudmeny">
-        <a href="#projects">Projekt</a>
-        <a href="#about">Om</a>
-        <a href="#contact">Kontakt</a>
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
       </nav>
       <div class="topbar__actions">
         <button class="iconbtn" id="themeBtn" aria-label="Växla tema" title="Växla tema">
@@ -32,6 +32,9 @@
             <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z" fill="currentColor" />
           </svg>
         </button>
+        <!-- <button id="langToggle" aria-label="Change language" title="Change language">
+          <img src="assets/ukflag.png" alt="English" />
+        </button> -->
         <!-- <button class="iconbtn" id="themeBtn" type="button" aria-label="Växla tema" title="Växla tema">
           <span aria-hidden="true">🌗</span>
         </button> -->
@@ -50,7 +53,7 @@
             <span class="tag">Performance</span>
             <span class="tag">Azure</span>
           </p> -->
-          <img src="assets/profil-bild.jpg" alt="Profilbild av Axel Sköld" class="profile-pic" />
+          <img src="assets/profil-bild.jpg" alt="Profile picture of Axel Sköld" class="profile-pic" />
           <h1>
             Axel Sköld
             <!-- Bygger snabba, stabila system<br />
@@ -80,7 +83,7 @@
     <section id="projects" class="section">
       <div class="container">
         <div class="section__head">
-          <h2>Projekt</h2>
+          <h2>Projects</h2>
 
         </div>
 
@@ -93,9 +96,9 @@
     <section id="about" class="section section--alt">
       <div class="container">
         <div>
-          <h2>Om</h2>
+          <h2>About</h2>
           <p>
-            Jag är en .Net utvecklare med ett stort teknikintresse och en passion för att skapa effektiva och skalbara lösningar.
+            I am a .NET developer with a strong interest in technology and a passion for creating efficient and scalable solutions.
           </p>
 
           <div class="bullets">
@@ -105,12 +108,12 @@
   </div>
 
   <div class="bullet card card--soft">
-    <div class="bullet__title">Databaser</div>
-    <div class="bullet__text">SQL Server, SQL, Entity Framework Core, Dapper</div>
+    <div class="bullet__title">Databases</div>
+    <div class="bullet__text">SQL Server, MongoDB, SQL, Entity Framework Core, Dapper</div>
   </div>
 
   <div class="bullet card card--soft">
-    <div class="bullet__title">DevOps & Infrastruktur</div>
+    <div class="bullet__title">DevOps & Infrastructure</div>
     <div class="bullet__text">GitHub Actions, Docker, Azure, CI/CD, MiniKube</div>
   </div>
   <div class="bullet card card--soft">
@@ -124,25 +127,25 @@
 
     <section id="contact" class="section">
       <div class="container">
-          <h2>Kontakt</h2>
+          <h2>Contact</h2>
           <p class="muted">
-            Säg hej!
+            Say hello!
           </p>
 
           <div class="contactCards">
             <div class="contactCard contactCard--form">
   <form class="contactForm" action="https://formspree.io/f/xeeobbvy" method="POST">
     <label class="contactField">
-      <span class="contactLabel">Din e-post</span>
-      <input type="email" name="email" placeholder="din@mail.se" required>
+      <span class="contactLabel">Your email</span>
+      <input type="email" name="email" placeholder="your@email.com" required>
     </label>
 
     <label class="contactField">
-  <span class="contactLabel">Meddelande</span>
-  <textarea name="message" rows="5" placeholder="Skriv ditt meddelande här..." required></textarea>
+  <span class="contactLabel">Message</span>
+  <textarea name="message" rows="5" placeholder="Write your message here..." required></textarea>
 </label>
 
-    <button class="btn btn--primary" type="submit">Skicka</button>
+    <button class="btn btn--primary" type="submit">Send</button>
     <p class="contactHint" aria-live="polite"></p>
   </form>
 </div>
