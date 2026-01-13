@@ -35,7 +35,7 @@ const projects = [
     title: "GearVault App for PC Gear",
     subtitle: "Inventory & Price Tracker",
     desc: "Web application for keeping track of your computer equipment and monitoring price developments over time. Built with Blazor WebAssembly and EF Core.",
-    tags: [".NET", "EF Core", "Dapper", "SQL", "Blazor"],
+    tags: [".NET", "EF Core", "AutoMapper", "SQL", "Blazor"],
     category: "Backend",
     links: { repo: "https://github.com/Axelskold93/GearVault" }
   },
