@@ -148,33 +148,35 @@ const form = document.querySelector("form");
 form?.addEventListener("submit", async (e) => {
   e.preventDefault();
 
-  const data = new FormData(form);
-  const res = await fetch(form.action, {
-    method: form.method,
-    body: data,
-    headers: { 'Accept': 'application/json' }
-  });
+  const submitBtn = form.querySelector('button[type="submit"]');
+  const originalText = submitBtn.textContent;
+  
+  // Visa loading-state
+  submitBtn.disabled = true;
+  submitBtn.textContent = "Sending...";
 
-  if (res.ok) {
-    form.reset();
-    alert("Tack! Jag hör av mig 👍");
-  } else {
-    alert(`Något gick fel (${res.status}). Kolla Console.`);
+  try {
+    const data = new FormData(form);
+    const res = await fetch(form.action, {
+      method: form.method,
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (res.ok) {
+      form.reset();
+      submitBtn.textContent = "Sent! ✓";
+      setTimeout(() => {
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+      }, 3000);
+    } else {
+      throw new Error(`Server returned ${res.status}`);
+    }
+  } catch (error) {
+    console.error('Form error:', error);
+    alert("Något gick fel. Försök igen senare.");
+    submitBtn.textContent = originalText;
+    submitBtn.disabled = false;
   }
-});
-function escapeHtml(str) {
-  return String(str)
-    .replaceAll("&", "&amp;")
-    .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;")
-    .replaceAll('"', "&quot;")
-    .replaceAll("'", "&#039;");
-}
-
-createFilters();
-render();
-
-searchInput?.addEventListener("input", (e) => {
-  searchTerm = e.target.value.trim().toLowerCase();
-  render();
 });
