@@ -56,7 +56,17 @@ const projects = [
     links: {}
   }
 ];
-
+// --- HTML escape utility ---
+function escapeHtml(text) {
+  const map = {
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#039;'
+  };
+  return text.replace(/[&<>"']/g, m => map[m]);
+}
 // --- Filtering / searching ---
 const grid = document.getElementById("projectGrid");
 const filtersEl = document.getElementById("filters");
