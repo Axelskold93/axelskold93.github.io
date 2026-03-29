@@ -84,7 +84,15 @@ function createFilters() {
     filtersEl.appendChild(btn);
   });
 }
+// Initialize the filters and render projects on page load
+createFilters();
+render();
 
+// Add search input event listener
+searchInput?.addEventListener("input", (e) => {
+  searchTerm = e.target.value.toLowerCase();
+  render();
+});
 function projectMatches(p) {
   const inCat = activeCategory === "All" || p.category === activeCategory;
   if (!inCat) return false;
